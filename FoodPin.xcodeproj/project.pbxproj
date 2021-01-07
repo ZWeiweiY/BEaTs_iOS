@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07064BA925A20FBE00F4C494 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EE8176D2541277C008B828E /* LaunchScreen.storyboard */; };
+		07B270FC259B026E00BBB097 /* RouteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B270FB259B026E00BBB097 /* RouteTableViewController.swift */; };
 		4E0D3DF8256F3E9D00E04A0E /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4E0D3DED256F3E9D00E04A0E /* OFL.txt */; };
 		4E0D3DF9256F3E9D00E04A0E /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E0D3DEE256F3E9D00E04A0E /* Rubik-BlackItalic.ttf */; };
 		4E0D3DFA256F3E9D00E04A0E /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E0D3DEF256F3E9D00E04A0E /* Rubik-Light.ttf */; };
@@ -35,12 +37,12 @@
 		4EE817652541277C008B828E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE817642541277C008B828E /* SceneDelegate.swift */; };
 		4EE8176A2541277C008B828E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EE817682541277C008B828E /* Main.storyboard */; };
 		4EE8176C2541277C008B828E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EE8176B2541277C008B828E /* Assets.xcassets */; };
-		4EE8176F2541277C008B828E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EE8176D2541277C008B828E /* LaunchScreen.storyboard */; };
 		4EE817772541293D008B828E /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE817762541293D008B828E /* RestaurantTableViewController.swift */; };
 		4EE8177925413599008B828E /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE8177825413599008B828E /* RestaurantTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07B270FB259B026E00BBB097 /* RouteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTableViewController.swift; sourceTree = "<group>"; };
 		4E0D3DED256F3E9D00E04A0E /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		4E0D3DEE256F3E9D00E04A0E /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
 		4E0D3DEF256F3E9D00E04A0E /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				4E2BA74D2581C29F0025546B /* ReviewViewController.swift */,
 				4E85D7E2258AF12700B4DDA8 /* NewRestaurantController.swift */,
 				4E2189CB259440E100102351 /* AboutMeController.swift */,
+				07B270FB259B026E00BBB097 /* RouteTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -218,7 +221,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = NDHU_CSIE;
 				TargetAttributes = {
 					4EE8175E2541277C008B828E = {
@@ -252,10 +255,10 @@
 				4E0D3DF9256F3E9D00E04A0E /* Rubik-BlackItalic.ttf in Resources */,
 				4E0D3E02256F3E9D00E04A0E /* Rubik-Regular.ttf in Resources */,
 				4E0D3DFE256F3E9D00E04A0E /* Rubik-LightItalic.ttf in Resources */,
+				07064BA925A20FBE00F4C494 /* LaunchScreen.storyboard in Resources */,
 				4E0D3DFD256F3E9D00E04A0E /* Rubik-Bold.ttf in Resources */,
 				4E0D3DFA256F3E9D00E04A0E /* Rubik-Light.ttf in Resources */,
 				4E0D3DFC256F3E9D00E04A0E /* Rubik-Black.ttf in Resources */,
-				4EE8176F2541277C008B828E /* LaunchScreen.storyboard in Resources */,
 				4EE8176C2541277C008B828E /* Assets.xcassets in Resources */,
 				4E0D3DF8256F3E9D00E04A0E /* OFL.txt in Resources */,
 				4E0D3E00256F3E9D00E04A0E /* Rubik-Italic.ttf in Resources */,
@@ -280,6 +283,7 @@
 				4E0D3E08256F527F00E04A0E /* RestaurantDetailTextCell.swift in Sources */,
 				4EE817632541277C008B828E /* AppDelegate.swift in Sources */,
 				4E5419B42566047000AE2EB4 /* Restaurant.swift in Sources */,
+				07B270FC259B026E00BBB097 /* RouteTableViewController.swift in Sources */,
 				4E0D3E06256F518100E04A0E /* RestaurantDetailIconTextCell.swift in Sources */,
 				4E0D3E04256F441700E04A0E /* RestaurantDetailHeaderView.swift in Sources */,
 				4E6C84F8257882E600896E88 /* MapViewController.swift in Sources */,
@@ -340,6 +344,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -400,6 +405,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -431,7 +437,7 @@
 		4EE817742541277C008B828E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_BEaTs;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FoodPin/Info.plist;
@@ -450,7 +456,7 @@
 		4EE817752541277C008B828E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_BEaTs;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FoodPin/Info.plist;

@@ -8,8 +8,10 @@
 
 import UIKit
 
+
 class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+
     @IBOutlet var tableView: UITableView!
     @IBOutlet var headerView: RestaurantDetailHeaderView!
     
@@ -87,6 +89,8 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -116,3 +120,4 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     
 
 }
+

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RestaurantTableViewController: UITableViewController, UISearchResultsUpdating {
+class RestaurantTableViewController: UITableViewController, UISearchResultsUpdating, UIViewControllerPreviewingDelegate {
 
     var restaurants: [Restaurant] = []
     
@@ -16,11 +16,24 @@ class RestaurantTableViewController: UITableViewController, UISearchResultsUpdat
     
     var searchResults: [Restaurant] = []
     
+    let LaunchImage = UIImageView(image: UIImage(named: "BEATS")!)
+    let splashView = UIView()
+    
     
     // MARK: - Table view lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        splashView.backgroundColor = UIColor.white
+        view.addSubview(splashView)
+        splashView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        
+        LaunchImage.contentMode = .scaleAspectFill
+        splashView.addSubview(LaunchImage)
+        LaunchImage.frame = CGRect(x: splashView.frame.midX-132.5, y: splashView.frame.midY-275, width: 265, height: 265)
+        
+        
         
         loadRestaurants()
         if restaurants.isEmpty {
@@ -35,8 +48,17 @@ class RestaurantTableViewController: UITableViewController, UISearchResultsUpdat
         searchController.searchResultsUpdater = self
         //not change the color of the search contents
         searchController.obscuresBackgroundDuringPresentation = false
-
-        
+        registerForPreviewing(with: self, sourceView: tableView)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return UIStatusBarStyle.default
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2){
+            self.scaleDownAnimation()
+        }
     }
 
     // MARK: - Table view data source
@@ -287,8 +309,51 @@ class RestaurantTableViewController: UITableViewController, UISearchResultsUpdat
         }
     }
 
+    // MARK: - 3D Touch
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = tableView.indexPathForRow(at: location),
+                let cell = tableView.cellForRow(at: indexPath)
+                else { return nil }
+
+            // Enable blurring of other UI elements, and a zoom in animation while peeking.
+            previewingContext.sourceRect = cell.frame
+
+            // Create and configure an instance of the color item view controller to show for the peek.
+            guard let viewController = storyboard?.instantiateViewController(withIdentifier: "RestaurantDetailViewController") as? RestaurantDetailViewController
+                else { preconditionFailure("Expected a RestaurantDetailViewController") }
+
+            // Pass over a reference to the ColorData object and the specific ColorItem being viewed.
+            viewController.restaurant = Restaurant()
+
+            return viewController
+
+    }
     
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        navigationController?.pushViewController(viewControllerToCommit, animated: true)
+    }
     
+    // MARK: - SplashView Animation
+    
+    func scaleDownAnimation(){
+        UIView.animate(withDuration: 0.5, animations: {
+            self.LaunchImage.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        }){( success ) in
+            self.scaleUpAnimation()
+        }
+    }
+    
+    func scaleUpAnimation(){
+        UIView.animate(withDuration: 0.35, delay: 0.1, options: .curveEaseIn, animations: {
+            self.LaunchImage.transform = CGAffineTransform(scaleX: 5, y: 5)
+        }){( success ) in
+            self.removeSplashScreen()
+        }
+    }
+    
+    func removeSplashScreen(){
+        splashView.removeFromSuperview()
+    }
 
 }
 
